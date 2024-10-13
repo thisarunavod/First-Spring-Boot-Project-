@@ -1,0 +1,6 @@
+#spring:
+#  application:
+#    name: NoteTakerV2
+#
+#server:
+#  port: 8082
