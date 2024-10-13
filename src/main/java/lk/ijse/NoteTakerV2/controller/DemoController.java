@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("api/v1/notes")
+@RequestMapping("api/v2/notes")
 @RestController
 public class DemoController {
 

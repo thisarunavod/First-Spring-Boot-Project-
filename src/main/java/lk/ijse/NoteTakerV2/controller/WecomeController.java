@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("api/v1/welcome")
+@RequestMapping("api/v2/welcome")
 public class WecomeController {
     @GetMapping
     public String welcome(Model model){
