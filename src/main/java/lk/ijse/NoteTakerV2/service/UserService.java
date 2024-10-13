@@ -2,6 +2,7 @@ package lk.ijse.NoteTakerV2.service;
 
 import lk.ijse.NoteTakerV2.customObj.UserResponse;
 import lk.ijse.NoteTakerV2.dto.impl.UserDTO;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
 
@@ -11,4 +12,6 @@ public interface UserService {
     void deleteUser( String userId );
     UserResponse getSelectedUser(String userId);
     List<UserDTO> getAllUser();
+
+    UserDetailsService userDetailsService();
 }

@@ -12,6 +12,7 @@ import lk.ijse.NoteTakerV2.exeption.DataPersistFailedException;
 import lk.ijse.NoteTakerV2.exeption.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -77,4 +78,12 @@ public class UserServiceImpl implements UserService{
     public List<UserDTO> getAllUser() {
         return mapping.convertToUserDTOList(userDao.findAll());
     }
+
+    @Override
+    public UserDetailsService userDetailsService() {
+        return email ->
+                userDao.findByEmail(email)
+                        .orElseThrow(()-> new UserNotFoundException("UserNot Found "));
+    }
+
 }
