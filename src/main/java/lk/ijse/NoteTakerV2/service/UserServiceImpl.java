@@ -72,6 +72,7 @@ public class UserServiceImpl implements UserService{
         } else {
             return new UserErrorResponse(0, "User not found");
         }
+
     }
 
     @Override
@@ -83,7 +84,7 @@ public class UserServiceImpl implements UserService{
     public UserDetailsService userDetailsService() {
         return email ->
                 userDao.findByEmail(email)
-                        .orElseThrow(()-> new UserNotFoundException("UserNot Found "));
+                        .orElseThrow(()-> new UserNotFoundException("User Not Found "));
     }
 
 }
