@@ -43,7 +43,6 @@ public class JWTConfig extends OncePerRequestFilter {
         //User Emial Validations
         if (StringUtils.isNotEmpty(userEmial) &&
                 SecurityContextHolder.getContext().getAuthentication() == null) {
-
             var loadedUser =
                     userService.userDetailsService().loadUserByUsername(userEmial);
             if (jwtService.isTokenValid(jwtToken, loadedUser)) {
@@ -54,8 +53,6 @@ public class JWTConfig extends OncePerRequestFilter {
                 authToken.setDetails(new WebAuthenticationDetails(request));
                 emptyContext.setAuthentication(authToken);
                 SecurityContextHolder.setContext(emptyContext);
-
-
             }
         }
     }

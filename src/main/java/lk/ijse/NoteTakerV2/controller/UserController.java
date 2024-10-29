@@ -27,7 +27,6 @@ public class UserController {
     //Save User
     @GetMapping("health")
     public String healthChecker(){ return "Runnng Perfectly";}
-
     @PostMapping (consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> saveUser(
             @RequestPart("firstName") String firstName,

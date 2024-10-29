@@ -70,6 +70,7 @@ public class DemoController {
     public ResponseEntity<Void> deleteNote(@PathVariable ("noteId") String noteId) {
 
         try {
+
             noteService.deleteNote(noteId);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (NoteNotFoundException e) {
